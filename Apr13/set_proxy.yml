@@ -1,5 +1,5 @@
 - name: Set Proxy
-  hosts: server
+  hosts: ap_servers
   user: root
   roles:
     - proxy

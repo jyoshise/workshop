@@ -1,0 +1,6 @@
+---
+# defaults file for wildfly
+wildfly_version: 10.1.0.Final
+wildfly_mirror: http://download.jboss.org/wildfly
+wildfly_install_parent_dir: /usr/local
+

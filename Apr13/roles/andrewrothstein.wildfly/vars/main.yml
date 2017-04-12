@@ -1,0 +1,6 @@
+---
+# vars file for wildfly
+# http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.tar.gz
+wildfly_name: wildfly-{{wildfly_version}}
+wildfly_tgz: '{{wildfly_name}}.tar.gz'
+wildfly_tgz_url: '{{wildfly_mirror}}/{{wildfly_version}}/{{wildfly_tgz}}'

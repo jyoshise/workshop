@@ -1,5 +1,7 @@
 - name: Set Proxy
   hosts: ap_servers
-  user: root
+  remote_user: junichi
+  become: true
+  become_user: root
   roles:
     - proxy

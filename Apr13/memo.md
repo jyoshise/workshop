@@ -9,7 +9,7 @@
 
 # 環境準備
 
-# 
+#
 
 ## ターゲットノードの作成
 
@@ -26,4 +26,15 @@ $ ssh-copy-id -o StrictHostKeyChecking=no -i $HOME/.ssh/id_rsa.pub <ターゲッ
 確認
 ```
 $ ssh <ターゲットノード>
+```
+
+## パスワード無しでsudoできるようにする
+
+ターゲットノードで
+```
+$ sudo visudo
+```
+最終行に追記
+```
+<ユーザ名> ALL=NOPASSWD: ALL
 ```

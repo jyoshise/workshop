@@ -16,6 +16,14 @@ http://qiita.com/t2y/items/99e40560a67b76ea1ff5
 - ネットワーク
 - ユーザ
 
+## 今日の教材
+https://github.com/jyoshise/workshop
+
+```$ git clone https://github.com/jyoshise/workshop.git```
+
+## Communication(Slack)
+https://earthprovisioning.slack.com/shared_invite/MTY4NTkyOTcwNTc5LTE0OTIwNTEzMTgtNjhiYzE3YzVmYQ
+
 -----
 
 # 環境準備

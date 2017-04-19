@@ -1,0 +1,12 @@
+---
+## SELinuxのモードを変更する
+- name: configure / Selinux
+  selinux:
+    policy: targeted
+    state: "{{ selinux_config_mode }}"
+  when : ansible_selinux.config_mode == 'enforcing'
+
+## OSユーザーを作成する
+- name: Create OS users
+  user: name={{item.name}} uid={{item.uid}} group={{item.group}} home={{item.home}} shell={{item.shell}} comment="{{item.comment}}"
+  with_items: users

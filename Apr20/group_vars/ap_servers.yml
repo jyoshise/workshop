@@ -1,0 +1,8 @@
+---
+## OS設定
+selinux_config_mode: permissive
+
+## JBoss設定
+jboss_install_directory: '/jast/home/{{ instance_name }}/opt/jbossapp'
+jboss_instance_directory: '/jast/home/{{ instance_name }}/opt/jbossap/jast'
+jboss_systemd_directory: /usr/lib/systemd/system

@@ -1,0 +1,12 @@
+---
+users:
+  - { name: 'LXOU',  uid: 5000, group: 'LXOG', home: '/jast/home/LX', shell: '/bin/bash', comment: '営業用' }
+  - { name: 'LEOU',  uid: 5100, group: 'LEOG', home: '/jast/home/LE', shell: '/bin/bash', comment: '為替用' }
+  - { name: 'LJOU',  uid: 5200, group: 'LJOG', home: '/jast/home/LJ', shell: '/bin/bash', comment: '収支用' }
+  - { name: 'LVOU',  uid: 5300, group: 'LVOG', home: '/jast/home/LV', shell: '/bin/bash', comment: '会計用' }
+  - { name: 'SDOU',  uid: 5400, group: 'SDOG', home: '/jast/home/SD', shell: '/bin/bash', comment: '共通マスタ用' }
+  - { name: 'BPOU',  uid: 5500, group: 'BPOG', home: '/jast/home/BP', shell: '/bin/bash', comment: 'BPM用' }
+  - { name: 'MHOU',  uid: 5600, group: 'MHOG', home: '/jast/home/MH', shell: '/bin/bash', comment: '共通マスタ用' }
+  - { name: 'LIOU',  uid: 5700, group: 'LIOG', home: '/jast/home/LI', shell: '/bin/bash', comment: '横串用' }
+  - { name: 'LTOU',  uid: 5800, group: 'LTOG', home: '/jast/home/LT', shell: '/bin/bash', comment: '会計用' }
+  - { name: 'jastadmin',  uid: 1000, group: 'jastadmin', home: '/jast/home/jastadmin', shell: '/bin/bash', comment: '会計用' }

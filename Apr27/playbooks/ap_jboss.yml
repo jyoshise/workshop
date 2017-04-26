@@ -1,3 +1,10 @@
 ---
 - hosts: ap_servers
-  roles: jboss
+  roles:
+    # JBoss EAP 7 instance for lx
+    - {
+        role: "Maarc.rh-jboss-eap",
+        jboss_eap_golden_image_name: "jboss-eap-7.1.0.Alpha",
+        jboss_eap_instance_name: "lx",
+        jboss_eap_instance_port_offset: 8100,
+      }

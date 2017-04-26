@@ -10,3 +10,5 @@ users:
   - { name: 'LIOU',  uid: 5700, group: 'LIOG', home: '/jast/home/LI', shell: '/bin/bash', comment: '横串用' }
   - { name: 'LTOU',  uid: 5800, group: 'LTOG', home: '/jast/home/LT', shell: '/bin/bash', comment: '会計用' }
   - { name: 'jastadmin',  uid: 1000, group: 'jastadmin', home: '/jast/home/jastadmin', shell: '/bin/bash', comment: '会計用' }
+
+gi_dir: /home/junichi/zipfiles

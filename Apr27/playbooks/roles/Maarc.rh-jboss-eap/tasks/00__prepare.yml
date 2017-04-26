@@ -36,10 +36,6 @@
   fail: msg="This role requires 'nexus_repository_id' to be set and non empty as it defines some applications in 'app_mvn_list'"
   when: app_mvn_list.0 is defined and (nexus_repository_id is not defined or nexus_repository_id == '')
 
-- name: (00) Check "bin_dir" variable
-  fail: msg="This role requires 'bin_dir' to be set and non empty."
-  when: bin_dir is not defined or bin_dir == ''
-
 - name: (00) Check "gi_dir" variable
   fail: msg="This role requires 'gi_dir' to be set and non empty."
   when: gi_dir is not defined or gi_dir == ''

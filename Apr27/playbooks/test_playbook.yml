@@ -7,8 +7,7 @@
       state: directory
       owner: junichi
       mode: 0755
-    with_items:
-      - instance_name
+    with_items: "{{instance_name}}"
 
   - name: copy file
     copy:

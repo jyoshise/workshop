@@ -1,5 +1,5 @@
 ---
-- hosts: ap_servers
+- hosts: ap_lx
   tasks:
   - name: create directory
     file:

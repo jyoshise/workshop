@@ -32,8 +32,8 @@
   when: conf_11.changed and cli_result.failed is defined and cli_result.failed
   fail: msg="One of the CLI commands failed."
 
-- name: "{{ jboss_eap_instance_name }} (05) Ensure JBoss EAP is running"
-  service:
-    name: "{{ jboss_eap_instance_service_name }}"
-    state: started
-    enabled: yes
+#- name: "{{ jboss_eap_instance_name }} (05) Ensure JBoss EAP is running"
+#  service:
+#    name: "{{ jboss_eap_instance_service_name }}"
+#    state: started
+#    enabled: yes

@@ -3,15 +3,15 @@
   tasks:
   - name: create directory
     file:
-      path: '/home/junichi/{{ item }}'
+      path: '/home/{{ ansible_user }}/{{ item }}'
       state: directory
-      owner: junichi
+      owner: '{{ ansible_user }}'
       mode: 0755
     with_items: "{{instance_name}}"
 
   - name: copy file
     copy:
       src: /etc/hosts
-      dest: /home/junichi/tmp/hosts
-      owner: junichi
+      dest: '/home/{{ ansible_user }}/tmp/hosts'
+      owner: '{{ ansible_user }}'
       mode: 0644

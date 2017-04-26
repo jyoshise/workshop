@@ -1,4 +1,3 @@
 ---
 - hosts: ap_servers
-  roles: common
-  
+  roles: jboss

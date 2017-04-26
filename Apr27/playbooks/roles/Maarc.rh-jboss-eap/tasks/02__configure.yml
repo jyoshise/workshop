@@ -28,33 +28,33 @@
       state: directory
       mode: "0750"
 
-  - name: "{{ jboss_eap_instance_name }} {{ info }} Copy init.d script (jboss-as-standalone.sh)"
-    copy:
-      remote_src: true
-      owner: "{{ jboss.user }}"
-      group: "{{ jboss.group }}"
-      src: "{{ jboss_home }}/bin/init.d/jboss-eap-rhel.sh"
-      dest: "{{ target_dir }}/service/jboss-as-standalone.sh"
-      mode: "0750"
-
-  when: conf_00.stat.isdir is undefined or conf_00.stat.isdir == False
-
-- name: "{{ jboss_eap_instance_name }} {{ info }} Update service init.d script (jboss-as-standalone.sh)"
-  lineinfile:
-    dest: "{{ target_dir }}/service/jboss-as-standalone.sh"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    backrefs: yes
-  with_items:
-    # Setting the correct JBOSS_CONF file
-    - { regexp: '^(.*)JBOSS_CONF=(.*)$', line: "\\1JBOSS_CONF=\"{{ jboss_eap_instance_dir }}/service/jboss-as.conf\"" }
-    # Setting the correct jboss.server.base.dir
-    - { regexp:  '(.*)JBOSS_SCRIPT=(.*)standalone.sh$', line: "\\1JBOSS_SCRIPT=\"\\2standalone.sh -Djboss.server.base.dir={{ jboss_eap_instance_dir }}\"" }
-    # Specific to the reload mechanism of JBoss EAP 6 - Changing the "JBOSS_CONSOLE_LOG" to "JBOSS_SERVER_LOG" (prevents hanging at startup while the console log has been disabled)
-    - { regexp: '^(.*)JBAS015874(.*)\$JBOSS_CONSOLE_LOG(.*)$', line: "\\1JBAS015874\\2{{ jboss_eap_instance_dir }}/log/server.log\\3" }
-    # Specific to the reload mechanism of JBoss EAP 7 - Set the startup-marker file to the instance specific folder
-    - { regexp: '^(.*)\$JBOSS_HOME/standalone/tmp/startup-marker(.*)$', line: "\\1{{ jboss_eap_instance_dir }}/tmp/startup-marker\\2" }
-  register: conf_02
+#  - name: "{{ jboss_eap_instance_name }} {{ info }} Copy init.d script (jboss-as-standalone.sh)"
+#    copy:
+#      remote_src: true
+#      owner: "{{ jboss.user }}"
+#      group: "{{ jboss.group }}"
+#      src: "{{ jboss_home }}/bin/init.d/jboss-eap-rhel.sh"
+#      dest: "{{ target_dir }}/service/jboss-as-standalone.sh"
+#      mode: "0750"
+#
+#  when: conf_00.stat.isdir is undefined or conf_00.stat.isdir == False
+#
+#- name: "{{ jboss_eap_instance_name }} {{ info }} Update service init.d script (jboss-as-standalone.sh)"
+#  lineinfile:
+#    dest: "{{ target_dir }}/service/jboss-as-standalone.sh"
+#    regexp: "{{ item.regexp }}"
+#    line: "{{ item.line }}"
+#    backrefs: yes
+#  with_items:
+#    # Setting the correct JBOSS_CONF file
+#    - { regexp: '^(.*)JBOSS_CONF=(.*)$', line: "\\1JBOSS_CONF=\"{{ jboss_eap_instance_dir }}/service/jboss-as.conf\"" }
+#    # Setting the correct jboss.server.base.dir
+#    - { regexp:  '(.*)JBOSS_SCRIPT=(.*)standalone.sh$', line: "\\1JBOSS_SCRIPT=\"\\2standalone.sh -Djboss.server.base.dir={{ jboss_eap_instance_dir }}\"" }
+#    # Specific to the reload mechanism of JBoss EAP 6 - Changing the "JBOSS_CONSOLE_LOG" to "JBOSS_SERVER_LOG" (prevents hanging at startup while the console log has been disabled)
+#    - { regexp: '^(.*)JBAS015874(.*)\$JBOSS_CONSOLE_LOG(.*)$', line: "\\1JBAS015874\\2{{ jboss_eap_instance_dir }}/log/server.log\\3" }
+#    # Specific to the reload mechanism of JBoss EAP 7 - Set the startup-marker file to the instance specific folder
+#    - { regexp: '^(.*)\$JBOSS_HOME/standalone/tmp/startup-marker(.*)$', line: "\\1{{ jboss_eap_instance_dir }}/tmp/startup-marker\\2" }
+#  register: conf_02
 
 - name: "{{ jboss_eap_instance_name }} {{ info }} Generate service jboss-as.conf"
   template:

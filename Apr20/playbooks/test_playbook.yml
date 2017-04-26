@@ -1,0 +1,16 @@
+---
+- hosts: ap_servers
+  tasks:
+  - name: create directory
+    file:
+      path: /home/junichi/tmp
+      state: directory
+      owner: junichi
+      mode: 0755
+
+  - name: copy file
+    copy:
+      src: /etc/hosts
+      dest: /home/junichi/tmp/hosts
+      owner: junichi
+      mode: 0644

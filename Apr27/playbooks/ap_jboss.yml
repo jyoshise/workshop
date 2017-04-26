@@ -4,6 +4,7 @@
     - {
         role: "Maarc.rh-jboss-eap",
         jboss_eap_golden_image_name: "jboss-eap-7.1.0.Alpha",
+        jboss_eap_name: "jboss-eap-7.1",
         jboss_eap_instance_name: "lx",
         jboss_eap_instance_port_offset: 8100
     }

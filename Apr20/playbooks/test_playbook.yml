@@ -3,7 +3,7 @@
   tasks:
   - name: create directory
     file:
-      path: /home/junichi/tmp
+      path: '/home/junichi/{{ instance_name }}'
       state: directory
       owner: junichi
       mode: 0755
